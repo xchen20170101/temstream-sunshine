@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/controlPanel"
+    android:layout_width="280dp"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:elevation="8dp"
+    android:visibility="gone">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingBottom="24dp">
+
+    <!-- 面板标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="控制面板"
+        android:textSize="20sp"
+        android:textColor="#212121"
+        android:textStyle="bold"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp"
+        android:gravity="center" />
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="16dp" />
+
+    <!-- 账户管理部分 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="账户管理"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="8dp" />
+
+    <!-- 修改密码按钮 -->
+    <Button
+        android:id="@+id/btnChangePassword"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="修改密码"
+        android:textSize="16sp"
+        android:textColor="#424242"
+        android:background="@drawable/button_secondary"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="12dp"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawablePadding="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:gravity="center_vertical" />
+
+    <!-- 退出登录按钮 -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="退出登录"
+        android:textSize="16sp"
+        android:textColor="#424242"
+        android:background="@drawable/button_secondary"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        android:drawableLeft="@drawable/ic_exit_to_app"
+        android:drawablePadding="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:gravity="center_vertical" />
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="16dp" />
+
+    <!-- 设备控制部分 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设备控制"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="8dp" />
+
+    <!-- 关闭设备按钮 -->
+    <Button
+        android:id="@+id/btnShutdownDevice"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="关闭设备"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_danger"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:drawableLeft="@drawable/ic_power_settings_new"
+        android:drawablePadding="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:gravity="center_vertical" />
+
+    <!-- 弹性空间，将按钮推到顶部 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 关闭面板按钮 -->
+    <Button
+        android:id="@+id/btnClosePanel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="关闭"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:background="?attr/selectableItemBackground"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:gravity="center" />
+
+</LinearLayout>
+
+</ScrollView>
+
+</FrameLayout>

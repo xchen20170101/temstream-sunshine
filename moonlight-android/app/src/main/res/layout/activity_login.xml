@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
+
+    <!-- 主容器 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- 表单卡片 -->
+            <LinearLayout
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:background="@drawable/login_form_card">
+
+                <!-- Logo -->
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/app_name" />
+
+                <!-- 标题 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp"
+                    android:text="TEMSTREAM"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/login_title"
+                    android:textSize="14sp"
+                    android:textColor="#8ea5c9" />
+
+                <!-- 分隔线 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="#356cff" />
+
+                <!-- 模式切换按钮组 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+
+                    <Button
+                        android:id="@+id/btnUserLogin"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:text="@string/tab_user_login"
+                        android:textSize="13sp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/mode_btn_selected" />
+
+                    <Button
+                        android:id="@+id/btnDeviceLogin"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:text="@string/tab_device_login"
+                        android:textSize="13sp"
+                        android:textColor="#8ea5c9"
+                        android:background="@drawable/mode_btn_selected" />
+
+                    <Button
+                        android:id="@+id/btnLanMode"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:text="@string/tab_lan_mode"
+                        android:textSize="13sp"
+                        android:textColor="#8ea5c9"
+                        android:background="@drawable/mode_btn_selected" />
+
+                </LinearLayout>
+
+                <!-- 用户登录表单 -->
+                <LinearLayout
+                    android:id="@+id/userLoginForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <!-- 用户名输入框 -->
+                    <EditText
+                        android:id="@+id/editTextUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:background="@drawable/input_background"
+                        android:hint="@string/username"
+                        android:textColorHint="#666666"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext" />
+
+                    <!-- 密码输入框 -->
+                    <EditText
+                        android:id="@+id/editTextPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:background="@drawable/input_background"
+                        android:hint="@string/password"
+                        android:textColorHint="#666666"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:imeOptions="actionDone" />
+
+                    <!-- 记住我复选框 -->
+                    <CheckBox
+                        android:id="@+id/checkBoxRememberMe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/remember_me"
+                        android:textSize="12sp"
+                        android:textColor="#8ea5c9"
+                        android:buttonTint="#356cff" />
+
+                </LinearLayout>
+
+                <!-- 设备直连表单 -->
+                <LinearLayout
+                    android:id="@+id/deviceLoginForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- 设备ID输入框 -->
+                    <EditText
+                        android:id="@+id/editTextDeviceId"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:background="@drawable/input_background"
+                        android:hint="@string/device_id_hint"
+                        android:textColorHint="#666666"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext" />
+
+                    <!-- 设备密码输入框 -->
+                    <EditText
+                        android:id="@+id/editTextDevicePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:background="@drawable/input_background"
+                        android:hint="@string/device_password_hint"
+                        android:textColorHint="#666666"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:inputType="textPassword"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:imeOptions="actionDone" />
+
+                    <!-- 提示文字 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="设备ID为8位数字，设备密码为6位字母数字"
+                        android:textSize="11sp"
+                        android:textColor="#666666" />
+
+                </LinearLayout>
+
+                <!-- 局域网模式表单 -->
+                <LinearLayout
+                    android:id="@+id/lanModeForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- 服务端IP输入框 -->
+                    <EditText
+                        android:id="@+id/editTextServerIp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:background="@drawable/input_background"
+                        android:hint="@string/server_ip_hint"
+                        android:textColorHint="#666666"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext" />
+
+                    <!-- 访问密码输入框 -->
+                    <EditText
+                        android:id="@+id/editTextLanPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:background="@drawable/input_background"
+                        android:hint="@string/lan_password_hint"
+                        android:textColorHint="#666666"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:imeOptions="actionDone" />
+
+                    <!-- 提示文字 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/lan_mode_hint"
+                        android:textSize="11sp"
+                        android:textColor="#666666" />
+
+                </LinearLayout>
+
+                <!-- 按钮组 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="24dp">
+
+                    <!-- 登录按钮 -->
+                    <Button
+                        android:id="@+id/buttonLogin"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="2"
+                        android:text="@string/login"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/login_btn_background" />
+
+                    <!-- 返回按钮 -->
+                    <Button
+                        android:id="@+id/buttonClose"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/close"
+                        android:textSize="14sp"
+                        android:textColor="#aaaaaa"
+                        android:background="@drawable/back_btn_background" />
+
+                </LinearLayout>
+
+                <!-- 通信配置 -->
+                <Button
+                    android:id="@+id/buttonCommConfig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/comm_config"
+                    android:textSize="13sp"
+                    android:textColor="#8ea5c9"
+                    android:background="@android:color/transparent" />
+
+                <!-- 进度条 -->
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    android:indeterminateTint="#356cff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

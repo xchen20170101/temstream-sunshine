@@ -1,0 +1,61 @@
+# Git attributes for cross-platform sanity.
+# https://git-scm.com/docs/gitattributes
+
+# Default to LF, except for Windows-specific scripts which need CRLF.
+*               text=auto eol=lf
+
+# Shell / PowerShell on Windows
+*.bat           text eol=crlf
+*.cmd           text eol=crlf
+*.ps1           text eol=crlf
+
+# C/C++/Go/Vue/JS source
+*.c             text eol=lf
+*.h             text eol=lf
+*.cpp           text eol=lf
+*.hpp           text eol=lf
+*.cc            text eol=lf
+*.go            text eol=lf
+*.vue           text eol=lf
+*.js            text eol=lf
+*.ts            text eol=lf
+
+# Documentation
+*.md            text eol=lf
+*.txt           text eol=lf
+
+# Configuration files
+*.yml           text eol=lf
+*.yaml          text eol=lf
+*.json          text eol=lf
+*.ini           text eol=lf
+*.toml          text eol=lf
+
+# Binary / large files — do not diff
+*.png           binary
+*.jpg           binary
+*.jpeg          binary
+*.gif           binary
+*.ico           binary
+*.icns          binary
+*.pdf           binary
+*.gz            binary
+*.zip           binary
+*.7z            binary
+*.dll           binary
+*.exe           binary
+*.so            binary
+*.dylib         binary
+
+# Linguist overrides — exclude generated / vendor code from language stats
+Sunshine/third-party/** linguist-vendored
+Sunshine/build/** linguist-generated
+backend/bin/** linguist-generated
+front/dist/** linguist-generated
+front/node_modules/** linguist-vendored
+*.min.js        linguist-generated
+*.min.css       linguist-generated
+
+# Markdown documentation
+*.md            linguist-documentation
+docs/**         linguist-documentation

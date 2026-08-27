@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 允许 cleartext（HTTP）通信，因为 Moonlight/Sunshine 配对协议使用 HTTP -->
+    <!-- Moonlight 主要用于内网流媒体，HTTP 用于配对和控制命令 -->
+    <!-- 后台 API 服务器在 ApiClient 中已强制使用 HTTPS，保持安全性 -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

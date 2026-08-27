@@ -1,0 +1,120 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PcView" >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:id="@+id/pcFragmentContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/settingsButton"
+        android:layout_toEndOf="@+id/settingsButton">
+
+        <!-- 无设备提示布局 -->
+        <RelativeLayout
+            android:id="@+id/no_pc_found_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone">
+            
+            <TextView
+                android:id="@+id/no_pc_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="暂无主机"
+                android:textSize="18sp"
+                android:textColor="#757575"
+                android:drawableTop="@drawable/ic_computer"
+                android:drawablePadding="16dp"
+                android:gravity="center" />
+            
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="70dp"
+        android:layout_height="65dp"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_settings"
+        android:tint="#424242"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Settings"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <ImageButton
+        android:id="@+id/refreshButton"
+        android:layout_width="70dp"
+        android:layout_height="65dp"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/settingsButton"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_refresh"
+        android:tint="#424242"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Refresh"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <!-- 【已移除】帮助按钮 - 简化界面 -->
+    <!-- 【已移除】添加PC按钮 - 设备通过云端API获取，不需要手动添加 -->
+    <!-- 【已移除】菜单按钮 - 功能按钮直接放到左侧 -->
+
+    <!-- 修改密码按钮 -->
+    <ImageButton
+        android:id="@+id/btnChangePassword"
+        android:layout_width="70dp"
+        android:layout_height="65dp"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/refreshButton"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_lock"
+        android:tint="#424242"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Change Password"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <!-- 退出登录按钮 -->
+    <ImageButton
+        android:id="@+id/btnLogout"
+        android:layout_width="70dp"
+        android:layout_height="65dp"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/btnChangePassword"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_exit_to_app"
+        android:tint="#424242"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Logout"
+        style="?android:attr/borderlessButtonStyle"/>
+
+</RelativeLayout>
+
+</FrameLayout>

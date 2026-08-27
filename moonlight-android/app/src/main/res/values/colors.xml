@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Login and API related colors -->
+    <color name="background_color">#FFFFFF</color>
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#666666</color>
+
+    <!-- Login UI colors -->
+    <color name="primary">#258cff</color>
+    <color name="primary_dark">#1a6fd9</color>
+    <color name="accent">#742cff</color>
+    <color name="login_background">#020511</color>
+    <color name="login_form_background">#10172d</color>
+    <color name="login_border">#356cff</color>
+    <color name="login_text_hint">#8ea5c9</color>
+</resources>

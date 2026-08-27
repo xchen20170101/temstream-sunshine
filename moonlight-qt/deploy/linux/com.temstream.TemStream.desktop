@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=TemStream
+Comment=Stream games and other applications from another PC running Sunshine or GeForce Experience
+Exec=temstream
+Icon=temstream
+Type=Application
+Categories=Network;RemoteAccess;
+Keywords=stream;remote;game;desktop;
+StartupWMClass=com.temstream.TemStream

@@ -1,0 +1,68 @@
+# Sunshine third-party dependencies (Git submodules)
+Sunshine-0.21.0/third-party/
+# Sunshine packaged output
+Sunshine-0.21.0/sunshine-release/
+# Allow NSIS build scripts to be tracked
+!Sunshine-0.21.0/pkg/*.bat
+!Sunshine-0.21.0/pkg/*.ps1
+!Sunshine-0.21.0/pkg/*.nsi
+# NSIS build output
+Sunshine-0.21.0/pkg/build-nsis/
+Sunshine-0.21.0/pkg/dist/
+
+Sunshine-0.21.0/config_tool_python/**/*.pyc
+
+# === Generic ===
+
+# Build output
+bin/
+dist/
+build/
+
+# Secrets / local config
+*.local
+*.local.*
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+cloud_server.log
+cloud_server.db
+cloud_server.db-journal
+
+# Native build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Local Android NDK config (contains absolute paths)
+moonlight-android/local.properties
+
+# Frontend build
+front/node_modules/
+front/dist/
+
+# Backend build
+backend/bin/
+
+# Sunshine build
+Sunshine/build/
+Sunshine/sunshine-release/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

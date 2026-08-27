@@ -82,8 +82,8 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
-            resValue "string", "app_label", "Temstream (Debug)"
-            resValue "string", "app_label_root", "Temstream (Root Debug)"
+            resValue "string", "app_label", "Temstream"
+            resValue "string", "app_label_root", "Temstream"
 
             minifyEnabled false
             // Disabled minification in debug mode to preserve generic type information for Retrofit
@@ -122,7 +122,7 @@ android {
             // TL;DR: Leave the following line alone!
             applicationIdSuffix ".unofficial"
             resValue "string", "app_label", "Temstream"
-            resValue "string", "app_label_root", "Temstream (Root)"
+            resValue "string", "app_label_root", "Temstream"
 
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -132,6 +132,12 @@ android {
     externalNativeBuild {
         ndkBuild {
             path "src/main/jni/Android.mk"
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "temstream.apk"
         }
     }
 }
